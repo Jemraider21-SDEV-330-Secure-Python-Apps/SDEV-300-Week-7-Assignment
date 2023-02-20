@@ -4,10 +4,10 @@ from datetime import datetime
 from flask import Flask
 from flask import render_template
 from flask import request
-from functionality.lab2_functionality import generate_password
 
 from models.lab1_model import Lab1Model
-
+from models.lab2_password_model import Lab2PasswordModel
+from models.lab2_percentage_model import Lab2PercentageModel
 app: Flask = Flask(__name__)
 
 
@@ -50,8 +50,27 @@ def lab2_password() -> str:
     if request.method == "GET":
         return render("lab2/password/lab2_password_form.html")
     if request.method == "POST":
-        password: str = generate_password(request.form)
+        form = request.form
+        model = Lab2PasswordModel(
+            int(form.get("length")),
+            bool(form.get("lowercase")),
+            bool(form.get("uppercase")),
+            bool(form.get("numbers")),
+            bool(form.get("specials")))
+        password: str = model.generate()
         return render("lab2/password/lab2_password_result.html", password)
+
+
+@app.route("/lab2/percentage/", methods=["GET", "POST"])
+def lab2_percentage() -> str:
+    if request.method == "GET":
+        return render("lab2/percentage/lab2_percentage_form.html")
+    if request.method == "POST":
+        form = request.form
+        model = Lab2PercentageModel(float(form.get("numerator")),
+                                    float(form.get("denominator")),
+                                    int(form.get("decimals")))
+        return render("lab2/percentage/lab2_percentage_result.html", model)
 
 
 def render(file: str, data=False) -> str:

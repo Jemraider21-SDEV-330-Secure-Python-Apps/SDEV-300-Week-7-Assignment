@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+"""Data model for Lab 2 - Percentage Formatting
+"""
 
 
 class Lab2PercentageModel:

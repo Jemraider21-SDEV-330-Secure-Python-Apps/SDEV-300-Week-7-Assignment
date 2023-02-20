@@ -28,8 +28,6 @@ def lab1() -> str:
     Returns:
         str: webpage for voter registration
     """
-    if request.method == "GET":
-        return render("lab1/lab1_form.html")
     if request.method == "POST":
         fname = request.form.get("fname")
         lname = request.form.get("lname")
@@ -39,6 +37,9 @@ def lab1() -> str:
                           request.form.get("zipcode"))
         return render("lab1/lab1_result.html", model)
 
+    # Assume a GET request
+    return render("lab1/lab1_form.html")
+
 
 @app.route("/lab2/password/", methods=["GET", "POST"])
 def lab2_password() -> str:
@@ -47,8 +48,6 @@ def lab2_password() -> str:
     Returns:
         str: webpages for password generation
     """
-    if request.method == "GET":
-        return render("lab2/password/lab2_password_form.html")
     if request.method == "POST":
         form = request.form
         model = Lab2PasswordModel(
@@ -60,17 +59,26 @@ def lab2_password() -> str:
         password: str = model.generate()
         return render("lab2/password/lab2_password_result.html", password)
 
+    # Assume a GET request
+    return render("lab2/password/lab2_password_form.html")
+
 
 @app.route("/lab2/percentage/", methods=["GET", "POST"])
 def lab2_percentage() -> str:
-    if request.method == "GET":
-        return render("lab2/percentage/lab2_percentage_form.html")
+    """Routing for Lab 2 Percentage
+
+    Returns:
+        str: Webpage for Lab 2 Percentage
+    """
     if request.method == "POST":
         form = request.form
         model = Lab2PercentageModel(float(form.get("numerator")),
                                     float(form.get("denominator")),
                                     int(form.get("decimals")))
         return render("lab2/percentage/lab2_percentage_result.html", model)
+
+    # Assume a GET request
+    return render("lab2/percentage/lab2_percentage_form.html")
 
 
 def render(file: str, data=False) -> str:

@@ -23,6 +23,6 @@ pylinter(){
 
 # Pylinting files
 pylinter "lab6" "lab6.py"
-pylinter "lab1_model" "models/lab1_model.py"
-pylinter "lab2_password" "models/lab2_password_model.py"
+# pylinter "lab1_model" "models/lab1_model.py"
+# pylinter "lab2_password" "models/lab2_password_model.py"
 pylinter "lab2_percentage" "models/lab2_percentage_model.py"

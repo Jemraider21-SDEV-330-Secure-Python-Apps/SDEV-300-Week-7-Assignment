@@ -1,6 +1,6 @@
-{% block title %} Lab1 {% endblock %}
-
-{% block content %} 
+{% extends "lab1/lab1_base.html" %}
+{% block page %} 
+    <h3>Let's Get Some Information About The New Voter</h3>
     <form action="/lab1" method="POST">
         <label for="fname">First Name:</label>
         <input type="text" id="fname" name="fname"><br>
@@ -9,10 +9,10 @@
         <input type="text" id="lname" name="lname"><br>
 
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age"><br>
+        <input type="number" id="age" name="age" min="18" max="99"><br>
 
         <label for="state">State:</label>
-        <select id="state">
+        <select id="state" name="state">
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>

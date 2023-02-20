@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('index')}}">CPP - Code Prevension Place</a>
+        <a class="navbar-brand" href="{{ url_for('index')}}">Jared Morris SDEV-300 Webpage</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,6 +18,15 @@
             <li class="nav-item active">
                 <a href="{{ url_for('index')}}">Home</a>
                 <a href="{{ url_for('lab1') }}">Lab 1</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Lab 2
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('lab2_password')}}">Generate Secure Password</a>
+                    </div>
+                </div>
+            
             </li>
             </ul>
         </div>
@@ -25,9 +34,10 @@
     <div class="container">
         {% block content %} {% endblock %}
     </div>
+    <hr>
     <footer>
         <p>By Jared Morris</p>
-        {{date}}
+        <p>Today's Date: {{date}}</p>
     </footer>
 </body>
 </html>

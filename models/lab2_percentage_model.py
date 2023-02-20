@@ -13,11 +13,15 @@ class Lab2PercentageModel:
         self.decimals: int = decimals
         self.result = self.format()
 
-    def format(self) -> float:
+    def format(self) -> float | str:
         """Format the percentage based on contrsuctor data
 
         Returns:
             float: formatted percentage
         """
-        result: float = self.numerator / self.denominator
+        result: float | str = 0
+        if self.denominator != 0:
+            result = self.numerator / self.denominator
+        else:
+            return "Cannot Divide By 0"
         return round(result, self.decimals)

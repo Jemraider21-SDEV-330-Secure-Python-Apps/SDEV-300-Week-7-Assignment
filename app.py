@@ -3,6 +3,7 @@
 from datetime import datetime
 from flask import Flask
 from flask import render_template
+from flask import request
 
 app: Flask = Flask(__name__)
 
@@ -17,25 +18,10 @@ def index() -> str:
     return render("index.html")
 
 
-@app.route("/scarycode")
-def scarycode() -> str:
-    """Displaying the page for 'Scary Code'
-
-    Returns:
-        str: the scarycode webpage
-    """
-    return render("scarycode.html")
-
-
-@app.route("/howtohelp")
-def howtohelp() -> str:
-    """Displaying the page for 'How To Help'
-
-    Returns:
-        str: the howtohelp webpage
-    """
-    return render("howtohelp.html")
-
+@app.route("/lab1/", methods=["GET", "POST"])
+def lab1():
+    if request.method == "GET":
+        return render("lab1/lab1_form.html")
 
 def render(file: str) -> str:
     """Calling the render_template function with other additions

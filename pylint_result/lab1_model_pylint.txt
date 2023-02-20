@@ -1,6 +1,4 @@
-************* Module lab1_model
-models/lab1_model.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 
-------------------------------------------------------------------
-Your code has been rated at 8.33/10 (previous run: 8.33/10, +0.00)
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 8.33/10, +1.67)
 

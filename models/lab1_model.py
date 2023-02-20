@@ -1,3 +1,6 @@
+"""Data model for Lab 1 - Voter Registration
+"""
+
 from dataclasses import dataclass
 
 

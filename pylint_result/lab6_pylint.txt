@@ -1,0 +1,9 @@
+************* Module lab6
+lab6.py:25:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+lab6.py:44:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+lab6.py:65:0: C0116: Missing function or method docstring (missing-function-docstring)
+lab6.py:65:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+
+------------------------------------------------------------------
+Your code has been rated at 8.95/10 (previous run: 8.95/10, +0.00)
+

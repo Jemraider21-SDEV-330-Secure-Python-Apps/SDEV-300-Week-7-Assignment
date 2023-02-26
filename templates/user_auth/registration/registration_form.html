@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> Registration </h1>
+    <form action="/registration" method="POST">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <p>Password needs the following requirements:</p>
+            <ul>
+                <li>At least 8 characters</li>
+                <li>At least one upper case letter</li>
+                <li>At least one lower case letter</li>
+                <li>At least one number</li>
+                <li>At least one special character</li>
+            </ul>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+{% endblock %}

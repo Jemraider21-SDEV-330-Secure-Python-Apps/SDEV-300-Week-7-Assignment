@@ -28,6 +28,10 @@ class Lab2PasswordModel:
             str: generated password
         """
         characters: str = ""
+        print("use lowercase:", self.lowercase)
+        print("use uppercase:", self.uppercase)
+        print("use numbers:", self.numbers)
+        print("use special characters:", self.specials)
         all_false_input = not any(
             [self.lowercase, self.uppercase, self.numbers, self.specials])
         if all_false_input:

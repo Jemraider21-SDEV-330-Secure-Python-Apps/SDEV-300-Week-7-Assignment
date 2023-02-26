@@ -2,5 +2,5 @@
 models/lab2_percentage_model.py:5:0: R0903: Too few public methods (1/2) (too-few-public-methods)
 
 ------------------------------------------------------------------
-Your code has been rated at 9.00/10 (previous run: 7.27/10, +1.73)
+Your code has been rated at 9.23/10 (previous run: 9.23/10, +0.00)
 

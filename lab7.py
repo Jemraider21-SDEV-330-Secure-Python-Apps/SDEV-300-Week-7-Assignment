@@ -35,7 +35,7 @@ def registration() -> str:
     if request.method == "POST":
         username: str = request.form.get("username")
         password: str = request.form.get("password")
-        if len(password) < 8:
+        if len(password) < 12:
             flash("Password is less than 8 characters.")
             return render("user_auth/registration/registration_form.html")
         error_msgs: list[str] = []
@@ -66,7 +66,7 @@ def registration() -> str:
 
         password = sha256_crypt.hash(password)
         with open("user_info/users.txt", "a", encoding="UTF-8") as file:
-            file.writelines(f'{username} {password}')
+            file.write(f'{username} {password}\n')
         flash("You have successfully registered")
         return render("index.html")
     return render("user_auth/registration/registration_form.html")

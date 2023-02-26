@@ -5,4 +5,5 @@
     <p>Age: {{ data.age }}</p>
     <p>State: {{ data.state }}</p>
     <p>Zip Code: {{ data.zipcode }}</p>
+    <img class="state" src="/static/imgs/states/{{ data.state.lower() }}.png">
 {% endblock %}
